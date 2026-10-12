@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+/* Make Tailwind dark: utilities follow the app theme (body.theme-dark), not the OS setting. */
+@custom-variant dark (&:where(.theme-dark, .theme-dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom fonts */
+.font-display {
+  font-family: 'Cinzel', serif;
+}
+
+/* Dark theme default */
+body.theme-dark {
+  background-color: #06111f;
+  color: #eaf7ff;
+}
+
+/* Light Candy Theme */
+body.theme-light {
+  background: radial-gradient(circle at 10% 0%, #e0f2fe 0%, #f0fdf4 35%, #fff1f2 80%, #f8fafc 100%);
+  color: #0f172a;
+}
+
+/* Leaflet map custom controls & container */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  transition: background 0.3s ease;
+}
+
+body.theme-dark .leaflet-container {
+  background: #06111f !important;
+}
+
+body.theme-light .leaflet-container {
+  background: #e0f2fe !important;
+}
+
+/* Zoom controls */
+body.theme-dark .leaflet-control-zoom {
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  background: rgba(10, 26, 45, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.theme-dark .leaflet-control-zoom a {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.6) !important;
+}
+
+body.theme-dark .leaflet-control-zoom a:hover {
+  background: rgba(30, 58, 95, 0.95) !important;
+  color: #38bdf8 !important;
+}
+
+body.theme-light .leaflet-control-zoom {
+  border: 1.5px solid rgba(14, 165, 233, 0.3) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 10px 25px -3px rgba(14, 165, 233, 0.22) !important;
+}
+
+body.theme-light .leaflet-control-zoom a {
+  background: transparent !important;
+  color: #0284c7 !important;
+  border-bottom: 1px solid rgba(224, 242, 254, 0.9) !important;
+  font-weight: 700 !important;
+}
+
+body.theme-light .leaflet-control-zoom a:hover {
+  background: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+/* Scale line */
+body.theme-dark .leaflet-control-scale-line {
+  background: rgba(10, 26, 45, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(148, 163, 184, 0.4) !important;
+  border-top: none !important;
+  color: #cbd5e1 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  padding: 1px 4px !important;
+}
+
+body.theme-light .leaflet-control-scale-line {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1.5px solid rgba(14, 165, 233, 0.4) !important;
+  border-top: none !important;
+  color: #0369a1 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 1px 4px !important;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1) !important;
+}
+
+/* IMBL Tooltip */
+body.theme-dark .imbl-tooltip {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border: 1px solid rgba(239, 68, 68, 0.8) !important;
+  color: #fca5a5 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.35) !important;
+  padding: 4px 8px !important;
+}
+
+body.theme-light .imbl-tooltip {
+  background: #ff3366 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 6px 18px rgba(255, 51, 102, 0.4) !important;
+  padding: 4px 10px !important;
+}
+
+/* Popups */
+body.theme-dark .leaflet-popup-content-wrapper {
+  background: rgba(10, 26, 45, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(71, 85, 105, 0.7) !important;
+  border-radius: 14px !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7) !important;
+}
+
+body.theme-light .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(14, 165, 233, 0.3) !important;
+  border-radius: 16px !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 35px -8px rgba(14, 165, 233, 0.25) !important;
+}
+
+body.theme-dark .leaflet-popup-tip {
+  background: rgba(10, 26, 45, 0.95) !important;
+  border: 1px solid rgba(71, 85, 105, 0.7) !important;
+}
+
+body.theme-light .leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(14, 165, 233, 0.3) !important;
+}
+
+/* Attribution text */
+body.theme-dark .leaflet-control-attribution {
+  background: rgba(3, 14, 27, 0.8) !important;
+  color: #8faec5 !important;
+}
+body.theme-dark .leaflet-control-attribution a {
+  color: #38bdf8 !important;
+}
+
+body.theme-light .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #64748b !important;
+}
+body.theme-light .leaflet-control-attribution a {
+  color: #0284c7 !important;
+}
+
+/* Candy Glass Cards */
+.candy-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid rgba(186, 230, 253, 0.8);
+  box-shadow: 0 12px 30px -4px rgba(14, 165, 233, 0.12), 0 4px 12px -2px rgba(244, 63, 94, 0.06);
+}
+
+.candy-tag-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.candy-tag-pink {
+  background: #ffe4e6;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+
+.candy-tag-green {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.candy-tag-amber {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+/* Leaflet.Draw Controls Custom Styling */
+body.theme-dark .leaflet-draw-toolbar a {
+  background-color: #0b1e36 !important;
+  border-color: #1e3a5f !important;
+  color: #38bdf8 !important;
+}
+body.theme-dark .leaflet-draw-toolbar a:hover {
+  background-color: #163259 !important;
+  color: #7dd3fc !important;
+}
+body.theme-dark .leaflet-draw-actions a {
+  background-color: #0369a1 !important;
+  color: #ffffff !important;
+}
+
+body.theme-light .leaflet-draw-toolbar a {
+  background-color: #ffffff !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+body.theme-light .leaflet-draw-toolbar a:hover {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+body.theme-light .leaflet-draw-actions a {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+
+
+
+/* Google Maps-style live GPS marker */
+.gps-live-dot { filter: drop-shadow(0 0 7px rgba(22,131,255,.95)); }
+.gps-pulse-ring { animation: safesea-gps-pulse 1.8s ease-out infinite; transform-origin: center; }
+@keyframes safesea-gps-pulse {
+  0% { opacity: .55; }
+  70% { opacity: .08; }
+  100% { opacity: .02; }
+}
+/* Keep custom map drawing controls above every Leaflet layer. */
+#map-custom-shapes-toolbar { z-index: 1200 !important; }
+#map-custom-shapes-toolbar button { pointer-events: auto !important; user-select: none; }
+.leaflet-pane.leaflet-marker-pane { z-index: 650; }
+
+.gps-live-tooltip { background: rgba(4,17,30,.94) !important; border: 1px solid rgba(56,189,248,.45) !important; color: #dff7ff !important; border-radius: 10px !important; box-shadow: 0 8px 24px rgba(0,0,0,.35) !important; }
+.gps-live-tooltip:before { border-top-color: rgba(4,17,30,.94) !important; }
+@keyframes safeseaPulse { 0%,100% { transform:scale(1); opacity:1; } 50% { transform:scale(1.18); opacity:.72; } }
+.safesea-fleet-marker { background: transparent !important; border: none !important; }
+
+
+
+/* ============================================================
+   BUTTON SYSTEM + ANIMATIONS (theme colours are untouched)
+   ============================================================ */
+#root button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease,
+              background-color .22s ease, border-color .22s ease, color .22s ease,
+              filter .22s ease, opacity .2s ease;
+}
+/* soft light sweep on hover */
+#root button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.22) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+#root button:not(:disabled):hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 6px 16px -6px currentColor; }
+#root button:not(:disabled):hover::before { transform: translateX(120%); }
+#root button:not(:disabled):active { transform: translateY(0) scale(.95); filter: brightness(.95); box-shadow: none; }
+#root button:disabled { cursor: not-allowed; filter: grayscale(.4); }
+#root button:focus-visible,
+#root input:focus-visible,
+#root textarea:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+body.theme-light #root button:focus-visible { outline-color: #0ea5e9; }
+#root button.no-fx::before { display: none; }
+#root button.no-fx:hover { transform: none; box-shadow: none; filter: none; }
+
+/* click ripple (injected by utils/buttonFx.ts) */
+.btn-ripple {
+  position: absolute;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: .35;
+  transform: scale(0);
+  pointer-events: none;
+  z-index: -1;
+  animation: btn-ripple .6s ease-out forwards;
+}
+@keyframes btn-ripple { to { transform: scale(1); opacity: 0; } }
+
+/* entrance animations */
+@keyframes fx-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fx-pop-in { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes fx-slide-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@keyframes fx-slide-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes fx-glow-red {
+  0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,.55); }
+  50% { box-shadow: 0 0 0 10px rgba(239,68,68,0); }
+}
+@keyframes fx-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-2px); } 75% { transform: translateX(2px); } }
+.fx-fade-in { animation: fx-fade-in .25s ease both; }
+.fx-pop-in { animation: fx-pop-in .3s cubic-bezier(.2,.8,.2,1) both; }
+.fx-slide-down { animation: fx-slide-down .35s ease both; }
+.fx-slide-up { animation: fx-slide-up .35s ease both; }
+.fx-emergency { animation: fx-glow-red 1.2s ease-out infinite; }
+#main-navigation-header { animation: fx-slide-down .45s cubic-bezier(.2,.8,.2,1) both; }
+#map-custom-shapes-toolbar { animation: fx-slide-up .5s .1s cubic-bezier(.2,.8,.2,1) both; }
+#map-legend-container { animation: fx-slide-up .5s .2s cubic-bezier(.2,.8,.2,1) both; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  #root *, #root *::before, #root *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

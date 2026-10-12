@@ -1,0 +1,6 @@
+{
+  "name": "India–Sri Lanka Maritime Boundary (IMBL)",
+  "description": "Complete interactive India–Sri Lanka maritime boundary reference with geodesic great-circle rendering, live GPS tracking, and custom geofence alerting.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
